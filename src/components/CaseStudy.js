@@ -1,4 +1,5 @@
 import React from 'react';
+import '/home/maxim/THP/dev++_semaine_5/router-dom/src/components/style/CaseStudy.css';
 
 const CaseStudy = ({ lang = 'fr' }) => {
   const caseStudies = {

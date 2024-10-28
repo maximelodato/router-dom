@@ -7,11 +7,11 @@ import Works from './components/Works';
 import Exercises from './components/Exercises';
 import CaseStudy from './components/CaseStudy';
 import ConcretCase from './components/ConcretCase';
-import './components/style/App.css'; // Correction du chemin vers App.css
+import './components/style/App.css'; 
 
 function App() {
-  const [theme, setTheme] = useState('light'); // Mode jour/nuit
-  const [lang, setLang] = useState('fr'); // Langue (français par défaut)
+  const [theme, setTheme] = useState('light');
+  const [lang, setLang] = useState('fr');
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -46,6 +46,7 @@ function App() {
     <div className={`app ${theme}`}>
       <Router>
         <header>
+          <h1>Portfolio de John Doe</h1>
           <nav>
             <ul>
               <li><Link to="/">{t.home}</Link></li>
@@ -54,20 +55,30 @@ function App() {
               <li><Link to="/works">{t.works}</Link></li>
             </ul>
           </nav>
-          <button onClick={toggleTheme}>{theme === 'light' ? t.toggleTheme : "Day Mode"}</button>
+          {/* Utilisation correcte de l'image dans le dossier public */}
+          <a href="https://github.com/maximelodato?tab=repositories" target="_blank" rel="noopener noreferrer">
+            <img src="/git.svg" alt="GitHub logo" style={{ width: '30px' }} />
+          </a>
+          <button onClick={toggleTheme}>{theme === 'light' ? t.toggleTheme : "Mode Jour"}</button>
           <button onClick={toggleLang}>{t.toggleLang}</button>
         </header>
 
-        <Routes>
-          <Route path="/" element={<Home lang={lang} />} />
-          <Route path="/about" element={<About lang={lang} />} />
-          <Route path="/contact" element={<Contact lang={lang} />} />
-          <Route path="/works" element={<Works lang={lang} />}>
-            <Route path="exercises" element={<Exercises lang={lang} />} />
-            <Route path="case-study" element={<CaseStudy lang={lang} />} />
-            <Route path="concret-case" element={<ConcretCase lang={lang} />} />
-          </Route>
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home lang={lang} />} />
+            <Route path="/about" element={<About lang={lang} />} />
+            <Route path="/contact" element={<Contact lang={lang} />} />
+            <Route path="/works" element={<Works lang={lang} />}>
+              <Route path="exercises" element={<Exercises lang={lang} />} />
+              <Route path="case-study" element={<CaseStudy lang={lang} />} />
+              <Route path="concret-case" element={<ConcretCase lang={lang} />} />
+            </Route>
+          </Routes>
+        </main>
+
+        <footer>
+          <p>&copy; 2024 John Doe</p>
+        </footer>
       </Router>
     </div>
   );

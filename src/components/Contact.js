@@ -1,78 +1,48 @@
 import React, { useState } from 'react';
+import '/home/maxim/THP/dev++_semaine_5/router-dom/src/components/style/Contact.css';
 
-const Contact = ({ lang = 'fr' }) => {
-  // Textes de traduction pour anglais et français
+const Contact = ({ lang }) => {
   const translations = {
     en: {
-      title: 'Contact Us',
-      name: 'Name',
-      email: 'Email',
+      contactText: 'Would you like to discuss with me, whether to offer me a job or just to pass the time during this confinement? Fill out the form below, and I will contact you as soon as possible.',
+      subject: 'Subject',
       message: 'Message',
       submit: 'Submit',
     },
     fr: {
-      title: 'Contactez-nous',
-      name: 'Nom',
-      email: 'Email',
+      contactText: 'Vous souhaitez discuter avec moi, que ce soit pour me proposer un poste ou pour passer le temps pendant ce confinement ? Remplissez le formulaire ci-dessous, je vous contacterai dès que je le peux.',
+      subject: 'Sujet',
       message: 'Message',
       submit: 'Envoyer',
     }
   };
 
-  // Utiliser la langue actuelle pour les traductions
   const t = translations[lang];
+  const [formData, setFormData] = useState({ subject: '', message: '' });
 
-  // Gérer les états pour les champs du formulaire
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  // Fonction pour mettre à jour l'état des champs du formulaire
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Fonction pour gérer la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Logique de soumission
-    console.log('Form submitted:', formData);
-    // Réinitialiser le formulaire
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    // Logique de soumission à ajouter si nécessaire
+    console.log('Form Data:', formData);
+    setFormData({ subject: '', message: '' });
   };
 
   return (
     <div>
-      <h1>{t.title}</h1>
+      <p>{t.contactText}</p>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">{t.name}:</label>
+          <label htmlFor="subject">{t.subject}:</label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">{t.email}:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            id="subject"
+            name="subject"
+            value={formData.subject}
             onChange={handleChange}
             required
           />

@@ -1,0 +1,78 @@
+/* Titres */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;  /* Couleur du titre en mode jour */
+}
+
+/* Mode nuit pour les titres */
+.app.dark h2 {
+  color: #f0f0f0;  /* Couleur du titre en mode nuit */
+}
+
+/* Liste des projets */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;  /* Texte en mode jour */
+}
+
+/* Mode nuit pour les éléments de la liste */
+.app.dark ul li {
+  color: #f0f0f0;  /* Texte clair en mode nuit */
+}
+
+/* Projet - Liste */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Images des projets */
+.project-list img {
+  width: 200px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Effet survol des images */
+.project-list img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation - Liste */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #007bff;  /* Liens bleus en mode jour */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Liens en mode nuit */
+.app.dark nav ul li a {
+  color: #02db55;  /* Liens verts en mode nuit */
+}
+
+nav ul li a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Liens en mode nuit - survol */
+.app.dark nav ul li a:hover {
+  color: #00ff7f;  /* Couleur plus claire au survol en mode nuit */
+}

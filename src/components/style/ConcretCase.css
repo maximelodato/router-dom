@@ -1,0 +1,45 @@
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;  /* Fond blanc en mode jour */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Mode nuit pour les cartes */
+.app.dark .card {
+  background-color: #333;  /* Fond sombre en mode nuit */
+  border: 1px solid #555;  /* Bordure plus foncée en mode nuit */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);  /* Ombre plus légère en mode nuit */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ombre et effet de survol en mode nuit */
+.app.dark .card:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);  /* Ombre plus visible en mode nuit */
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;  /* Couleur du texte en mode jour */
+}
+
+/* Texte en mode nuit */
+.app.dark .card h3 {
+  color: #f0f0f0;  /* Couleur du texte en mode nuit */
+}

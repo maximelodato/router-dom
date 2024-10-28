@@ -1,16 +1,15 @@
 import React from 'react';
+import '/home/maxim/THP/dev++_semaine_5/router-dom/src/components/style/Home.css';
 
-const Home = ({ lang = 'fr' }) => {
+const Home = ({ lang }) => {
   const translations = {
     en: {
-      title: 'Home Page',
-      welcomeMessage: 'Welcome to my portfolio website!',
-      description: 'Here you will find all the projects I have worked on.',
+      title: 'Hello, I\'m John Doe. Welcome to my portfolio!',
+      intro: 'For the past few months, I have been learning web development with The Hacking Project. I have learned Ruby, Rails, JavaScript, and React.',
     },
     fr: {
-      title: 'Page d\'accueil',
-      welcomeMessage: 'Bienvenue sur mon site portfolio !',
-      description: 'Vous trouverez ici tous les projets sur lesquels j\'ai travaillé.',
+      title: 'Bonjour, je m\'appelle John Doe. Bienvenue sur mon portfolio !',
+      intro: 'Depuis quelques mois, j\'apprends le développement web grâce à The Hacking Project. J\'ai ainsi pu apprendre à utiliser Ruby, Rails, JavaScript et React.',
     }
   };
 
@@ -19,8 +18,7 @@ const Home = ({ lang = 'fr' }) => {
   return (
     <div>
       <h1>{t.title}</h1>
-      <p>{t.welcomeMessage}</p>
-      <p>{t.description}</p>
+      <p>{t.intro}</p>
     </div>
   );
 };
