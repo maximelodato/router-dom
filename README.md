@@ -17,3 +17,4 @@ Ce projet est un portfolio simple créé avec React et `react-router-dom`. Il co
 
 - Node.js installé sur votre machine (vérifiez avec `node -v` et `npm -v`).
 
+Bouton jours/nuits et Anglais/Francais
