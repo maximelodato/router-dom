@@ -1,17 +1,16 @@
-// src/components/CaseStudy.js
 import React from 'react';
 
-const CaseStudy = () => {
-  const caseStudies = [
-    'Nike, the new website',
-    'Paypal, how their data are stored'
-  ];
+const CaseStudy = ({ lang = 'fr' }) => {
+  const caseStudies = {
+    en: ['Nike, the new website', 'Paypal, how their data are stored'],
+    fr: ['Nike, le nouveau site web', 'Paypal, comment leurs données sont stockées']
+  };
 
   return (
     <div>
-      <h2>Case Study</h2>
+      <h2>{lang === 'fr' ? 'Étude de cas' : 'Case Study'}</h2>
       <div className="cards">
-        {caseStudies.map((study, index) => (
+        {caseStudies[lang].map((study, index) => (
           <div key={index} className="card">
             <h3>{study}</h3>
           </div>
